@@ -18,7 +18,7 @@
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
     if ([[cheeseName lowercaseString] hasSuffix:@" cheese"]) {
-        NSRange cheeseRange = [cheeseName rangeOfString:@" Cheese"];
+        NSRange cheeseRange = [[cheeseName lowercaseString] rangeOfString:@" cheese"];
         NSString *cheeseWithoutSuffix = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
         return cheeseWithoutSuffix;
     } else {
@@ -30,7 +30,6 @@
      (You will learn more about if/else statements in a later checkpoint.)
      */
 
-    
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
