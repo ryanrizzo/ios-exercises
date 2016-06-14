@@ -39,18 +39,18 @@
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
     /* WORK HERE */
-    NSNumber *lowestSoFar = arrayOfNumbers[0];
-    
+    NSNumber *lowestSoFar = [arrayOfNumbers firstObject];
+    NSInteger lowest = [lowestSoFar integerValue];
     for( NSNumber *current in arrayOfNumbers){
-        
-        if(current > lowestSoFar){
-            lowestSoFar = current;
+        NSInteger curr = [current integerValue];
+        if(curr < lowest){
+            lowest = curr;
         }
         
     }
     
-    NSInteger result = [lowestSoFar integerValue];
-    return result;
+   
+    return lowest;
 }
 
 @end
